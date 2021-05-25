@@ -24,6 +24,7 @@ do
         array+=(${result[$i]})
 done
 echo "The values from dictionary are stored in arrays are : ${array[*]}"
+#Sorting array in descending order
 for(( i=0;i<${#array[*]};i++ ))
 do
         for(( j=$i;j<${#array[*]};j++ ))
@@ -38,3 +39,17 @@ do
 done
 echo "Sorted Array in descending order is : ${array[*]}"
 
+#Sorting array in ascending order
+for(( i=0;i<${#array[*]};i++ ))
+do
+        for(( j=$i;j<${#array[*]};j++ ))
+        do
+                if [ ${array[$i]} -gt ${array[$j]} ]
+                then
+                        temp=${array[$i]}
+                        array[$i]=${array[$j]}
+                        array[$j]=$temp
+                fi
+        done
+done
+echo "Sorted Array in ascending order is : ${array[*]}"
