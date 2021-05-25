@@ -14,3 +14,8 @@ val3=$((c+a/b))
 echo "$val3"
 val4=$((a%b+c))
 echo "$val4"
+#echo $val1 $val2 $val3 $val4
+declare -A result
+result=( ["1"]=$val1 ["2"]=$val2 ["3"]=$val3 ["4"]=$val4 )
+echo "The values stored in dictionary are : ${result[*]}"
+
