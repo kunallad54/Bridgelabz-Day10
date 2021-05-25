@@ -18,4 +18,10 @@ echo "$val4"
 declare -A result
 result=( ["1"]=$val1 ["2"]=$val2 ["3"]=$val3 ["4"]=$val4 )
 echo "The values stored in dictionary are : ${result[*]}"
+declare -a array=()
+for(( i=1;i<=${#result[*]};i++ ))
+do
+        array+=(${result[$i]})
+done
+echo "The values from dictionary are stored in arrays are : ${array[*]}"
 
